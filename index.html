@@ -13,18 +13,15 @@
             --soft-gray: #F8F9FA; 
             --border: #E9ECEF; 
             --safe-green: #2ECC71;
-            --warning: #F1C40F;
         }
         
         body { margin: 0; font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
         
-        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; border-bottom: 1px solid var(--border); background: white; position: sticky; top: 0; z-index: 100; }
         .logo { font-weight: 700; font-size: 24px; color: var(--accent); letter-spacing: -1px; }
         .nav-links button { background: none; border: none; margin-left: 25px; font-weight: 600; color: #636e72; cursor: pointer; font-family: inherit; transition: 0.3s; }
         .nav-links button:hover { color: var(--accent); }
 
-        /* Main Container */
         main { max-width: 900px; margin: 0 auto; padding: 60px 20px; min-height: 80vh; }
         .page { display: none; animation: fadeIn 0.4s ease-out; }
         .page.active { display: block; }
@@ -33,8 +30,7 @@
         h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #1e272e; letter-spacing: -1px; }
         .sub-header { font-size: 18px; color: #636e72; margin-bottom: 40px; }
 
-        /* Interface Elements */
-        .card { background: var(--soft-gray); border-radius: 24px; padding: 30px; border: 1px solid var(--border); margin-bottom: 25px; transition: 0.3s; }
+        .card { background: var(--soft-gray); border-radius: 24px; padding: 30px; border: 1px solid var(--border); margin-bottom: 25px; }
         
         textarea, input, select { 
             width: 100%; border: 2px solid white; border-radius: 14px; padding: 15px; 
@@ -49,14 +45,11 @@
             transition: 0.3s; box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
         }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(74, 144, 226, 0.3); }
-        .btn-secondary { background: #edf2f7; color: var(--text); border: none; padding: 12px 20px; border-radius: 10px; font-weight: 600; cursor: pointer; margin-bottom: 10px; width: 100%; transition: 0.2s; }
-        .btn-secondary:hover { background: #e2e8f0; }
+        .btn-secondary { background: #edf2f7; color: var(--text); border: none; padding: 12px 20px; border-radius: 10px; font-weight: 600; cursor: pointer; margin-bottom: 10px; width: 100%; }
 
-        /* Checklist Styles */
         .checklist-item { display: flex; align-items: center; margin-bottom: 12px; font-weight: 500; }
-        .checklist-item input { width: 20px; height: 20px; margin-right: 12px; margin-bottom: 0; cursor: pointer; }
+        .checklist-item input { width: 20px; height: 20px; margin-right: 12px; margin-bottom: 0; }
 
-        /* Results Display */
         #aiResult { margin-top: 25px; padding: 25px; background: white; border-radius: 20px; display: none; border-left: 6px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         #aiOutputText { white-space: pre-wrap; font-size: 16px; color: #2d3436; }
         .status-dot { height: 10px; width: 10px; background-color: var(--safe-green); border-radius: 50%; display: inline-block; margin-right: 8px; }
@@ -79,40 +72,31 @@
 
 <main>
     <div id="home" class="page active">
-        <h1>Know your rights.<br>In real-time.</h1>
-        <p class="sub-header">A digital utility belt for legal encounters. Unlike general AI, RightsPath focuses on actionable scripts and state-specific protocols.</p>
+        <h1>Know your rights.</h1>
+        <p class="sub-header">Select your state and describe your situation to receive exact legal protocols and verbal scripts.</p>
         <div class="grid-2">
             <div class="card">
                 <h3>Analysis Engine</h3>
-                <p>Describe your situation for a custom legal script.</p>
                 <button class="btn-primary" onclick="showPage('ai')">Start Analysis</button>
             </div>
             <div class="card">
                 <h3>Interactive Tools</h3>
-                <p>Live checklists and quick-tap emergency scripts.</p>
                 <button class="btn-primary" style="background: #2d3436;" onclick="showPage('tools')">Open Tools</button>
             </div>
         </div>
     </div>
 
     <div id="ai" class="page">
-        <div style="margin-bottom: 15px; font-size: 14px; font-weight: 600; color: var(--safe-green);">
-            <span class="status-dot"></span> RightsPath 3.0 Real-Time Logic
-        </div>
         <h1>Analysis Engine</h1>
         <div class="card">
             <label style="font-weight: 700; display: block; margin-bottom: 8px;">1. Select Your State</label>
             <select id="stateSelect">
-                <option value="General US">General US Advice</option>
-                <option value="California">California</option>
-                <option value="Texas">Texas</option>
-                <option value="New York">New York</option>
-                <option value="Florida">Florida</option>
-                <option value="Other">Other State</option>
+                <option value="" disabled selected>Select a State...</option>
+                <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
             </select>
             
             <label style="font-weight: 700; display: block; margin-bottom: 8px;">2. Describe Encounter</label>
-            <textarea id="aiInput" style="height: 120px;" placeholder="e.g. 'Stopped for walking in a park after dark, officer asking for ID...'"></textarea>
+            <textarea id="aiInput" style="height: 120px;" placeholder="e.g. 'Stopped for walking in a park, officer asking for ID...'"></textarea>
             
             <button class="btn-primary" id="aiBtn" onclick="runAnalysis()">Analyze Situation</button>
             
@@ -125,36 +109,28 @@
 
     <div id="tools" class="page">
         <h1>Utility Hub</h1>
-        <p class="sub-header">Interactive resources for immediate use.</p>
-        
         <div class="grid-2">
             <div class="card">
                 <h3>Encounter Checklist</h3>
-                <p style="font-size: 14px; margin-bottom: 15px;">Follow these steps in order:</p>
                 <div class="checklist-item"><input type="checkbox"> Am I free to go?</div>
                 <div class="checklist-item"><input type="checkbox"> I do not consent to searches.</div>
                 <div class="checklist-item"><input type="checkbox"> I am exercising my 5th.</div>
-                <div class="checklist-item"><input type="checkbox"> Is my camera recording?</div>
             </div>
-
             <div class="card">
-                <h3>One-Tap Scripts</h3>
-                <p style="font-size: 14px; margin-bottom: 15px;">Tap to see the correct legal phrasing:</p>
+                <h3>Quick Scripts</h3>
                 <button class="btn-secondary" onclick="setScript('Officer, am I free to go or am I being detained?')">Detention Inquiry</button>
                 <button class="btn-secondary" onclick="setScript('I do not consent to a search of my person or property.')">Refuse Search</button>
-                <button class="btn-secondary" onclick="setScript('I am invoking my right to remain silent and I wish to speak to an attorney.')">Invoke Silence</button>
             </div>
         </div>
     </div>
 
     <div id="contact" class="page">
         <h1>Professional Review</h1>
-        <p class="sub-header">Submit your encounter details for a manual case intake review.</p>
         <div class="card">
             <input type="text" placeholder="Full Name">
             <input type="email" placeholder="Email Address">
-            <textarea style="height: 150px;" placeholder="Describe the incident timeline..."></textarea>
-            <button class="btn-primary" onclick="alert('Intake received. We will contact you via email.')">Submit Securely</button>
+            <textarea style="height: 150px;" placeholder="Describe incident..."></textarea>
+            <button class="btn-primary" onclick="alert('Intake received.')">Submit</button>
         </div>
     </div>
 </main>
@@ -180,6 +156,7 @@
         const resText = document.getElementById('aiOutputText');
         const btn = document.getElementById('aiBtn');
 
+        if(!state) { alert("Please select a state first."); return; }
         if(!input) return;
 
         btn.innerText = "Accessing Statutes...";
@@ -195,13 +172,13 @@
                     contents: [{ parts: [{ text: `SYSTEM INSTRUCTION: 
                         - You are RightsPath, a specialized legal utility. 
                         - DO NOT use hashtags (#). Use bold for emphasis.
-                        - Tone: Direct, supportive, peer-to-peer.
+                        - Tone: Direct, supportive, and clear.
                         - Jurisdiction: ${state}.
-                        - Context: ${input}.
-                        - FORMAT YOUR RESPONSE AS FOLLOWS:
-                        1. Relevant Law: (Specific Statute or Amendment)
-                        2. Your Protection: (1-2 sentences on why this applies)
-                        3. Exact Script: (The best words for the user to speak right now)` }] }]
+                        - Task: Provide state-specific statutes for this encounter: ${input}.
+                        - FORMAT:
+                        1. Relevant Law: (Specific State Statute or Constitutional Amendment)
+                        2. Your Rights: (1-2 sentences on how this state handles this)
+                        3. Exact Script: (The best verbal response for the user)` }] }]
                 })
             });
 
@@ -209,7 +186,6 @@
             if (data.error) {
                 resText.innerHTML = `<span style="color:red">Error: ${data.error.message}</span>`;
             } else {
-                // Remove all # symbols and display
                 resText.innerText = data.candidates[0].content.parts[0].text.replace(/#/g, '');
             }
         } catch (e) {
@@ -220,6 +196,5 @@
         }
     }
 </script>
-
 </body>
 </html>
